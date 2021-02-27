@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
         return (
             <Html>
                 <Head>
+                <link rel="shortcut icon" type="image/ico" href="/pokemon.ico"/>
                 </Head>
                 <Main />
                 <NextScript />
