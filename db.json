@@ -1,4 +1,6 @@
 {
     "title":"Pokedex",
-    "inputplaceholder":"Digite o nome do Pokemon"
+    "inputplaceholder":"Digite o nome do Pokemon",
+    "nextpage":"Proximo",
+    "prevpage":"Anterior"
 }
