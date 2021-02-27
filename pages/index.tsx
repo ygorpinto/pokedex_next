@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { BringPokes } from '../components/BringPokes'
 import { Container } from '../components/Container'
 import db from '../db.json'
 import { GlobalStyles } from '../styles/global'
@@ -11,7 +12,7 @@ export default function Home() {
       </Head>
       <GlobalStyles/>
       <Container>
-        
+      <BringPokes/>
       </Container>
     </>
   )

@@ -1,0 +1,44 @@
+.pokeForm{
+    margin-top: 1.2rem;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.pokeForm form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokeForm input {
+    height: 1.6rem;
+    width:40%;
+    border: none;
+    border-radius: 6px 6px;
+}
+
+@media screen and (max-width:450px){
+
+    .pokeForm{
+        margin-top: 0.1rem;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+    }
+    
+    .pokeForm form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .pokeForm input {
+        height: 1.6rem;
+        width:40%;
+        border: none;
+        border-radius: 6px 6px;
+    }
+}
