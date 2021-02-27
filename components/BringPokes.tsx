@@ -6,18 +6,18 @@ import axios from 'axios';
 export const BringPokes = () => {
 
 const [pokemon,setPokemon] = useState([]);
+const [currentUrl,setCurrentUrl] = useState(`https://pokeapi.co/api/v2/pokemon`);
 
 const fetchingPokes = async () => {
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
+    const res = await axios.get(currentUrl);
     const data = await res.data;
-    setPokemon(data.results.map(item=>{
-        return(
-        <div className={styles.pokemon}>{item.name}</div>)}));
+    setPokemon(data.results.map(item=>(
+        <div className={styles.pokemon}>{item.name}</div>)));
 }
 
 useEffect(()=>{
     fetchingPokes();
-},[])
+},[currentUrl])
     
 
     return (

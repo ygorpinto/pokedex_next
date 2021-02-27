@@ -4,7 +4,6 @@
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    overflow: scroll;
 }
 
 .pokeForm form {
@@ -35,8 +34,8 @@
 }
 
 .pokemon{
-    width: 10rem;
-    height: 12rem;
+    width: 8rem;
+    height: 10rem;
     display:flex;
     justify-content:center;
     align-items: center;
