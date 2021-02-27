@@ -1,0 +1,29 @@
+.mainCointainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width:auto;
+    background-color: var(--background);
+}
+
+.imgContainer{
+    margin-top: 2rem;
+    display:flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.imgContainer > img{
+    transition: filter 0.2s;
+}
+
+.imgContainer > img:hover{
+filter:brightness(70%)
+}
+
+@media screen and (max-width:500px){
+.imgContainer > img {
+    height: 60%;
+    width: 40%;
+}      
+}

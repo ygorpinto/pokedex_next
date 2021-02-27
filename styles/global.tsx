@@ -1,3 +1,11 @@
+import {createGlobalStyle} from 'styled-components'
+
+export const GlobalStyles = createGlobalStyle`
+body{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 :root {
     --white: #fff;
     --background: #f2f3f5;
@@ -10,5 +18,6 @@
     --blue: #5965e0;
     --blue-dark: #4953b8;
     --blue-twitter: #1aa9e0;
-  }
+}
+`
   
