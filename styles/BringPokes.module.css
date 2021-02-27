@@ -17,6 +17,13 @@
     width:40%;
     border: none;
     border-radius: 6px 6px;
+    color: var(--blue);
+}
+
+.pokeForm input::placeholder {
+    text-align: center;
+    color: var(--blue);
+    opacity: 0.6;
 }
 
 @media screen and (max-width:450px){
@@ -28,17 +35,4 @@
         align-items: center;
     }
     
-    .pokeForm form {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .pokeForm input {
-        height: 1.6rem;
-        width:40%;
-        border: none;
-        border-radius: 6px 6px;
-    }
 }
