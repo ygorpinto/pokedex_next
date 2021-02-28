@@ -50,7 +50,7 @@
 }
 
 .pokeForm button {
-    margin-top: 0.6rem;
+    margin: 0.5rem;
     background-color: var(--blue);
     color:var(--white);
     border:none;
@@ -58,6 +58,25 @@
     height: 2rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
+}
+
+.loadingContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingContainer img {
+    height: 40%;
+}
+
+.loadingContainer p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color:var(--blue);
+    font-size: 1rem;
 }
 
 @media screen and (max-width:450px){

@@ -43,7 +43,11 @@ const prevPage = () => {
     setCurrentUrl(previousUrl)
 }
 
-if (isLoading) return (<div>"Loading..."</div>)
+if (isLoading) return (
+    <div className={styles.loadingContainer}>
+    <img src="/loading.gif"/>
+    <p>Loading ...</p>
+    </div>)
 
     return (
         <div className={styles.pokeForm}>
