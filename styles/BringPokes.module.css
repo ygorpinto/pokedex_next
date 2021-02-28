@@ -28,6 +28,7 @@
 }
 
 .pokeForm div{
+    margin-top: 0.8rem;
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
@@ -37,9 +38,26 @@
     width: 8rem;
     height: 10rem;
     display:flex;
+    backdrop-filter: blur(5px);
+    background: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.20));
+    border-radius: 10px;
+    box-shadow: 0.1rem 0.1rem rgba(0,0,0,0.1);
     justify-content:center;
     align-items: center;
-    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color:var(--blue-dark);
+}
+
+.pokeForm button {
+    margin-top: 0.6rem;
+    background-color: var(--blue);
+    color:var(--white);
+    border:none;
+    border-radius:0.3rem;
+    height: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
 @media screen and (max-width:450px){

@@ -1,4 +1,3 @@
-import next from 'next'
 import db from '../db.json'
 
 export const Pagination = ({nextPage,prevPage}) => {
