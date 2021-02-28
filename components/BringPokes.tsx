@@ -21,7 +21,7 @@ export const BringPokes = () => {
         });
         const data = await res.data;
         setTimeout(() => {
-            setIsloading(false)
+        setIsloading(false)
         }, 600)
         setNextUrl(data.next)
         setpreviousUrl(data.previous)
