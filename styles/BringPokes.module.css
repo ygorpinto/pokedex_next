@@ -64,6 +64,10 @@
     font-weight: 500;
 }
 
+.pokeForm button:hover{
+    background-color: var(--blue-dark);
+}
+
 .loadingContainer{
     width: 100%;
     display: flex;

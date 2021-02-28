@@ -14,13 +14,14 @@
     justify-content: center;
 }
 
-.imgContainer > img{
-    margin-bottom: 0;
+.imgContainer a {
     height: 60%;
+    display:flex;
+    justify-content: center;
     transition: filter 0.2s;
 }
 
-.imgContainer > img:hover{
+.imgContainer > a:hover{
 filter:brightness(70%)
 }
 

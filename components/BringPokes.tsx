@@ -59,10 +59,8 @@ export const BringPokes = () => {
             .then(data=> { 
                 resolve(data);
             })
-        })
-       
+        }) 
     }
-
 
     if (isLoading) return (
         <div className={styles.loadingContainer}>

@@ -5,11 +5,11 @@ interface ContainerProps {
     children: ReactNode;
 }
 
-export const Container = ({children}:ContainerProps) => {
+export const Container = ({ children }: ContainerProps) => {
     return (
         <div className={styles.mainCointainer}>
             <div className={styles.imgContainer}>
-            <img src="/pokedex.png"/>
+                <a href="/"><img src="/pokedex.png" /></a>
             </div>
             {children}
         </div>
