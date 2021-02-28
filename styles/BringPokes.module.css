@@ -1,4 +1,6 @@
 .pokeForm{
+    top:8rem;
+    position: absolute;
     display:flex;
     justify-content:center;
     align-items: center;
@@ -54,7 +56,7 @@
 }
 
 .pokeForm button {
-    margin: 0.5rem;
+    margin: 1.6rem 0.4rem;
     background-color: var(--blue);
     color:var(--white);
     border:none;
@@ -69,13 +71,49 @@
 }
 
 .loadingContainer{
+    height: 60vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 5;
 }
 
+.loadingContainer img {
+    height: 40%;
+}
+
+.loadingContainer p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color:var(--blue);
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width:500px){
+
+.pokeForm{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.pokeForm input {
+    height: 1.6rem;
+    width:90vw;
+    border: none;
+    border-radius: 6px 6px;
+    color: var(--blue);
+}
+    
+.loadingContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    
 .loadingContainer img {
     height: 40%;
 }
@@ -87,31 +125,13 @@
     font-size: 1rem;
 }
 
-@media screen and (max-width:450px){
+.pokeForm{
+    top:5rem;
+    position: absolute;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
 
-    .pokeForm{
-
-        display:flex;
-        justify-content:center;
-        align-items: center;
-    }
-
-    .pokeForm input {
-        height: 1.6rem;
-        width:90vw;
-        border: none;
-        border-radius: 6px 6px;
-        color: var(--blue);
-    }
-    
-    .loadingContainer{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    .loadingContainer img {
-        height: 40%;
-    }
 }
