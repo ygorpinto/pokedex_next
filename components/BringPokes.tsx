@@ -21,14 +21,18 @@ const fetchingPokes = async () => {
         cancelToken: new axios.CancelToken(c => cancel = c)
     });
     const data = await res.data;
-    setIsloading(false)
+    console.log(data.results);
+    setTimeout(()=>{
+        setIsloading(false)
+    },400)
     setNextUrl(data.next)
     setpreviousUrl(data.previous)
-    
-    setPokemon(data.results.map(item=>(
-        <div className={styles.pokemon}>{item.name}</div>)));
-
+    setPokemon(data.results)
     return () => cancel();
+}
+
+const loadingPokes = async () => {
+    await axios.get(pokemon.url)
 }
 
 useEffect(()=>{
@@ -57,7 +61,11 @@ if (isLoading) return (
                 />
             </form>
             <div>
-                {pokemon}
+                {pokemon.map(item=>(
+        <div className={styles.pokemon}>
+        <p>{item.name}</p>
+        <img src=""/>
+        </div>))}
             </div>
             <Pagination
             nextPage={nextUrl ? nextPage : null}
