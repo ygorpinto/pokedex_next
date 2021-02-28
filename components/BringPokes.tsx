@@ -1,14 +1,13 @@
 import styles from '../styles/BringPokes.module.css'
 import db from '../db.json'
-import { createContext, useEffect, useState } from 'react'
+import {useEffect, useState } from 'react'
 import axios from 'axios';
 import { Pagination } from './Pagination';
 
-export const BringContext = createContext({});
 
 export const BringPokes = () => {
 
-    const [pokemon, setPokemon] = useState([]);
+    const [pokemonData, setPokemonData] = useState([]);
     const [currentUrl, setCurrentUrl] = useState(`https://pokeapi.co/api/v2/pokemon`);
     const [nextUrl, setNextUrl] = useState();
     const [previousUrl, setpreviousUrl] = useState();
@@ -21,25 +20,18 @@ export const BringPokes = () => {
             cancelToken: new axios.CancelToken(c => cancel = c)
         });
         const data = await res.data;
-        console.log(data.results);
         setTimeout(() => {
             setIsloading(false)
-        }, 400)
+        }, 600)
         setNextUrl(data.next)
         setpreviousUrl(data.previous)
-        setPokemon(data.results)
+
+        getAllPokes(data.results)
+
         return () => cancel();
     }
 
-    const loadingPokes = () => {
-        pokemon.forEach((item) => {
-            axios.get(item.url)
-                .then(res => console.log(res.data))
-        })
-    }
-
     useEffect(() => {
-        loadingPokes();
         fetchingPokes();
     }, [currentUrl])
 
@@ -50,6 +42,27 @@ export const BringPokes = () => {
     const prevPage = () => {
         setCurrentUrl(previousUrl)
     }
+
+    const getAllPokes = async (data) => {
+        let _pokemon = await Promise.all(data.map(async pokemon => {
+            let pokemonRecord = await getPokemon(pokemon.url)
+            return pokemonRecord
+        }))
+
+        setPokemonData(_pokemon)
+    }
+
+    const getPokemon = async (url) => {
+        return new Promise((resolve,reject)=>{
+            fetch(url)
+            .then(response=>response.json())
+            .then(data=> { 
+                resolve(data);
+            })
+        })
+       
+    }
+
 
     if (isLoading) return (
         <div className={styles.loadingContainer}>
@@ -65,10 +78,10 @@ export const BringPokes = () => {
                 />
             </form>
             <div>
-                {pokemon.map(item => (
+                {pokemonData.map(item => (
                     <div key={item.name} className={styles.pokemon}>
+                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${item.id}.gif`}/>
                         <p>{item.name}</p>
-                        <img src="" />
                     </div>))}
             </div>
             <Pagination

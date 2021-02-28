@@ -15,7 +15,8 @@
 }
 
 .imgContainer > img{
-    height: 70%;
+    margin-bottom: 0;
+    height: 60%;
     transition: filter 0.2s;
 }
 

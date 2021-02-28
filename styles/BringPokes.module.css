@@ -1,5 +1,4 @@
 .pokeForm{
-    margin-top: 1.2rem;
     display:flex;
     justify-content:center;
     align-items: center;
@@ -36,17 +35,22 @@
 
 .pokemon{
     width: 8rem;
-    height: 10rem;
+    height: 11rem;
     display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
     backdrop-filter: blur(5px);
-    background: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.20));
+    background: linear-gradient(to top,rgba(0,0,0,0.01),rgba(0,0,0,0.20));
     border-radius: 10px;
     box-shadow: 0.1rem 0.1rem rgba(0,0,0,0.1);
-    justify-content:center;
-    align-items: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color:var(--blue-dark);
+}
+
+.pokemon:hover{
+    background: linear-gradient(to bottom,rgba(0,0,0,0.01),rgba(0,0,0,0.20));
 }
 
 .pokeForm button {
