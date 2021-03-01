@@ -67,8 +67,6 @@ export const BringPokes = () => {
             })
         }) 
     }
-
-    console.log(search);
     
 
     if (isLoading) return (
@@ -76,6 +74,9 @@ export const BringPokes = () => {
             <img src="/loading.gif" />
             <p>Loading ...</p>
         </div>)
+    
+    let searchValue = search.toLowerCase();
+    let filtredPokemons = pokemonData.filter((poke)=>poke.name.includes(searchValue))  
 
     return (
         <div className={styles.pokeForm}>
@@ -87,7 +88,7 @@ export const BringPokes = () => {
                 />
             </form>
             <div>
-                {pokemonData.map(item => (
+                {filtredPokemons.map(item => (
                     <div key={item.name} className={styles.pokemon}>
                         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${item.id}.gif`}/>
                         <p>{item.name}</p>
