@@ -3,16 +3,22 @@ import db from '../db.json'
 import {useEffect, useState } from 'react'
 import axios from 'axios';
 import { Pagination } from './Pagination';
+import { type } from 'os';
 
 
 export const BringPokes = () => {
 
     const [pokemonData, setPokemonData] = useState([]);
+    const [search,setSearch] = useState("");
     const [currentUrl, setCurrentUrl] = useState(`https://pokeapi.co/api/v2/pokemon`);
     const [nextUrl, setNextUrl] = useState();
     const [previousUrl, setpreviousUrl] = useState();
     const [isLoading, setIsloading] = useState(true);
 
+    interface Event {
+        e:String;
+    }
+    
     const fetchingPokes = async () => {
         setIsloading(true)
         let cancel
@@ -62,6 +68,9 @@ export const BringPokes = () => {
         }) 
     }
 
+    console.log(search);
+    
+
     if (isLoading) return (
         <div className={styles.loadingContainer}>
             <img src="/loading.gif" />
@@ -72,6 +81,8 @@ export const BringPokes = () => {
         <div className={styles.pokeForm}>
             <form>
                 <input
+                    value={search}
+                    onChange={e=>setSearch(e.target.value)}
                     placeholder={db.inputplaceholder}
                 />
             </form>
