@@ -29,7 +29,7 @@ $ yarn add axios
 
 ##### Preview :
 
-![](/public/loadingdemo.gif)
+![](/public/loadingimg.gif)
 
 
 ![](/public/search.gif)
