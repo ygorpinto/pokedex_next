@@ -1,6 +1,4 @@
 .pokeForm{
-    top:8rem;
-    position: absolute;
     display:flex;
     justify-content:center;
     align-items: center;
@@ -28,16 +26,17 @@
     opacity: 0.6;
 }
 
-.pokeForm div{
-    margin-top: 0.8rem;
+.pokemonContainer{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-evenly;
+    justify-content:center;
 }
 
 .pokemon{
     width: 8rem;
     height: 11rem;
+    margin: 0.1rem;
     display:flex;
     flex-direction: column;
     align-items: center;

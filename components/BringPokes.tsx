@@ -87,7 +87,7 @@ export const BringPokes = () => {
                     placeholder={db.inputplaceholder}
                 />
             </form>
-            <div>
+            <div className={styles.pokemonContainer}>
                 {filtredPokemons.map(item => (
                     <div key={item.name} className={styles.pokemon}>
                         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${item.id}.gif`}/>
