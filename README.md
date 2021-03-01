@@ -10,6 +10,7 @@ Tecnologias utilizadas :
 
 Primeiro clone o repo.
 $ git glone https://github.com/ygorpinto/pokedex_next.git
+
 Instale as dependências como dependências de desenvolvimento
 $ npm install --save-dev typescript 
 or 
