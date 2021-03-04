@@ -33,6 +33,14 @@ export const ContainerStyles = styled.div`
     position:absolute;
     top:2%;
     left:1%;
+
+    button{
+        background:none;
+        border:none;
+        font-size:0px;
+        outline:none;
+        cursor:pointer;
+    }
 }
 
 @media screen and (max-width:500px){
