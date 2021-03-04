@@ -7,7 +7,7 @@ export const ContainerStyles = styled.div`
     flex-direction: column;
     height: 100vh;
     width:auto;
-    background-color: var(--background);
+    background-color:${props=>props.theme.colors.background};
     overflow: auto;
 }
 
@@ -27,6 +27,12 @@ export const ContainerStyles = styled.div`
 
 .imgContainer > a:hover{
     filter:brightness(70%)
+}
+
+.switch{
+    position:absolute;
+    top:2%;
+    left:1%;
 }
 
 @media screen and (max-width:500px){
