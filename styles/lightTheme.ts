@@ -6,4 +6,4 @@ export default {
         background:"#f2f3f5",
 
     }
-}
+};
