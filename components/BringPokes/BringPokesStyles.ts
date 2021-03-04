@@ -1,3 +1,6 @@
+import styled from 'styled-components'
+
+export const BringPokesStyle = styled.div`
 .pokeForm{
     display:flex;
     justify-content:center;
@@ -134,3 +137,4 @@
 }
 
 }
+`

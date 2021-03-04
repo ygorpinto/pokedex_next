@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
-import styles from '../styles/Container.module.css'
+import {ContainerStyles} from '../Container/ContainerStyles'
+
 
 interface ContainerProps {
     children: ReactNode;
@@ -7,11 +8,13 @@ interface ContainerProps {
 
 export const Container = ({ children }: ContainerProps) => {
     return (
-        <div className={styles.mainCointainer}>
-            <div className={styles.imgContainer}>
+        <ContainerStyles>
+        <div className="mainCointainer">
+            <div className="imgContainer">
                 <a href="/"><img src="/pokedex.png" /></a>
             </div>
             {children}
         </div>
+        </ContainerStyles>
     )
 }

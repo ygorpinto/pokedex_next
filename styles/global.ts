@@ -7,6 +7,7 @@ padding:0;
 box-sizing:border-box;
 }
 :root {
+    --darkbg: #2d2727;
     --white: #fff;
     --background: #f2f3f5;
     --gray-line: #dcdde0;

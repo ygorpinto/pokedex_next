@@ -1,3 +1,7 @@
+import styled from 'styled-components'
+
+export const ContainerStyles = styled.div`
+
 .mainCointainer{
     display: flex;
     flex-direction: column;
@@ -30,3 +34,4 @@
     height: 60%;
 }      
 }
+`

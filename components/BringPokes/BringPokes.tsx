@@ -1,9 +1,8 @@
-import styles from '../styles/BringPokes.module.css'
-import db from '../db.json'
+import {BringPokesStyle} from '../BringPokes/BringPokesStyles'
+import db from '../../db.json'
 import {useEffect, useState } from 'react'
 import axios from 'axios';
-import { Pagination } from './Pagination';
-import { type } from 'os';
+import { Pagination } from '../Pagination/Pagination';
 
 
 export const BringPokes = () => {
@@ -70,16 +69,20 @@ export const BringPokes = () => {
     
 
     if (isLoading) return (
-        <div className={styles.loadingContainer}>
+        <BringPokesStyle>
+        <div className="loadingContainer">
             <img src="/loading.gif" />
             <p>Loading ...</p>
-        </div>)
+        </div>
+        </BringPokesStyle>
+        )
     
     let searchValue = search.toLowerCase();
     let filtredPokemons = pokemonData.filter((poke)=>poke.name.includes(searchValue))  
 
     return (
-        <div className={styles.pokeForm}>
+        <BringPokesStyle>
+        <div className="pokeForm">
             <form>
                 <input
                     value={search}
@@ -87,9 +90,9 @@ export const BringPokes = () => {
                     placeholder={db.inputplaceholder}
                 />
             </form>
-            <div className={styles.pokemonContainer}>
+            <div className="pokemonContainer">
                 {filtredPokemons.map(item => (
-                    <div key={item.name} className={styles.pokemon}>
+                    <div key={item.name} className="pokemon">
                         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${item.id}.gif`}/>
                         <p>{item.name}</p>
                     </div>))}
@@ -99,5 +102,6 @@ export const BringPokes = () => {
                 prevPage={previousUrl ? prevPage : null}
             />
         </div>
+        </BringPokesStyle>
     )
 }
