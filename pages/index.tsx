@@ -6,6 +6,7 @@ import light from '../styles/lightTheme'
 import dark from '../styles/darkTheme'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+import { ThemeButton } from '../components/ThemeButton/ThemeButton'
 
 
 
@@ -24,12 +25,7 @@ export default function Home() {
       </Head>
       <ThemeProvider theme={theme}>
       <Container>
-        <div className="switch">
-          <button
-          onClick={handleTheme}>
-            <img src="/half-moon.png"/>
-          </button>
-        </div>
+        <ThemeButton func={handleTheme}/>
       <BringPokes/>
       </Container>
       </ThemeProvider>
