@@ -50,7 +50,7 @@ export const BringPokesStyle = styled.div`
     box-shadow: 0.2rem 0.2rem rgba(0,0,0,0.04);
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    color:var(--blue-dark);
+    color:${props=>props.theme.colors.text};
     transition: opacity 0.3s;
 }
 
@@ -89,7 +89,7 @@ export const BringPokesStyle = styled.div`
 .loadingContainer p {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    color:var(--blue);
+    color:${props=>props.theme.colors.text};
     font-size: 1.4rem;
 }
 
@@ -123,7 +123,7 @@ export const BringPokesStyle = styled.div`
 .loadingContainer p {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    color:var(--blue);
+    color:${props=>props.theme.colors.text};
     font-size: 1rem;
 }
 
