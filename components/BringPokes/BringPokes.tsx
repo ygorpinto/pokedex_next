@@ -1,11 +1,21 @@
 import {BringPokesStyle} from '../BringPokes/BringPokesStyles'
 import db from '../../db.json'
-import {useEffect, useState } from 'react'
+import {createContext, ReactNode, useEffect, useState } from 'react'
 import axios from 'axios';
 import { Pagination } from '../Pagination/Pagination';
 
+interface PokemonContextProps {
+    filtredPokemons:Object;
+}
+
+interface BringPokesProps {
+    children : ReactNode;
+}
+
+export const PokemonContext = createContext({} as PokemonContextProps);
 
 export const BringPokes = () => {
+
 
     const [pokemonData, setPokemonData] = useState([]);
     const [search,setSearch] = useState("");
@@ -81,6 +91,10 @@ export const BringPokes = () => {
     let filtredPokemons = pokemonData.filter((poke)=>poke.name.includes(searchValue))  
 
     return (
+        <PokemonContext.Provider 
+        value={{
+            filtredPokemons,
+        }}>
         <BringPokesStyle>
         <div className="pokeForm">
             <form>
@@ -103,5 +117,6 @@ export const BringPokes = () => {
             />
         </div>
         </BringPokesStyle>
+        </PokemonContext.Provider>
     )
 }
