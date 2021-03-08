@@ -4,12 +4,16 @@ import { PokeInfoStyles } from "./PokeInfoStyles"
 
 export const PokeInfo = () => {
 
-    const {filtredPokemons} = useContext(PokemonContext)
-
+    const {filtredPokemons,isinfoPokeOpen} = useContext(PokemonContext)
+    
     return (
+        <>
+        {isinfoPokeOpen && (
         <PokeInfoStyles>
-            <div id="pokeInfo">
-            </div>
+            {filtredPokemons.map(item=>(
+                <div className="pokeInfo">{item.id}</div>))}
         </PokeInfoStyles>
+        )}
+        </>
     )
 }

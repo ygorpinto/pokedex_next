@@ -3,14 +3,13 @@ import db from '../../db.json'
 import {createContext, ReactNode, useEffect, useState } from 'react'
 import axios from 'axios';
 import { Pagination } from '../Pagination/Pagination';
+import { PokeInfo } from '../PokeInfo/PokeInfo';
 
 interface PokemonContextProps {
-    filtredPokemons:Object;
+    filtredPokemons:array;
+    isinfoPokeOpen:boolean;
 }
 
-interface BringPokesProps {
-    children : ReactNode;
-}
 
 export const PokemonContext = createContext({} as PokemonContextProps);
 
@@ -23,6 +22,7 @@ export const BringPokes = () => {
     const [nextUrl, setNextUrl] = useState();
     const [previousUrl, setpreviousUrl] = useState();
     const [isLoading, setIsloading] = useState(true);
+    const [isinfoPokeOpen, setIsInfoPokeOpen] = useState(false);
 
     interface Event {
         e:String;
@@ -77,6 +77,9 @@ export const BringPokes = () => {
         }) 
     }
     
+    const ShowPokes = () => {
+        setIsInfoPokeOpen(true);
+    }
 
     if (isLoading) return (
         <BringPokesStyle>
@@ -94,7 +97,9 @@ export const BringPokes = () => {
         <PokemonContext.Provider 
         value={{
             filtredPokemons,
+            isinfoPokeOpen,
         }}>
+        <PokeInfo/>
         <BringPokesStyle>
         <div className="pokeForm">
             <form>
@@ -106,7 +111,7 @@ export const BringPokes = () => {
             </form>
             <div className="pokemonContainer">
                 {filtredPokemons.map(item => (
-                    <div key={item.name} className="pokemon">
+                    <div key={item.name} className="pokemon" onClick={ShowPokes}>
                         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${item.id}.gif`}/>
                         <p>{item.name}</p>
                     </div>))}
