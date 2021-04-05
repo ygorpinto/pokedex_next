@@ -1,13 +1,15 @@
 import {BringPokesStyle} from '../BringPokes/BringPokesStyles'
 import db from '../../db.json'
-import {createContext, ReactNode, useEffect, useState } from 'react'
+import {createContext, Dispatch, SetStateAction, useEffect, useState } from 'react'
 import axios from 'axios';
 import { Pagination } from '../Pagination/Pagination';
 import { PokeInfo } from '../PokeInfo/PokeInfo';
 
 interface PokemonContextProps {
-    filtredPokemons:array;
-    isinfoPokeOpen:boolean;
+    setIsInfoPokeOpen:Dispatch<SetStateAction<boolean>>,
+    isinfoPokeOpen:boolean,
+    idItem:number,
+    setIdItem:Dispatch<SetStateAction<number>>,
 }
 
 
@@ -23,6 +25,7 @@ export const BringPokes = () => {
     const [previousUrl, setpreviousUrl] = useState();
     const [isLoading, setIsloading] = useState(true);
     const [isinfoPokeOpen, setIsInfoPokeOpen] = useState(false);
+    const [idItem, setIdItem] = useState(1)
 
     interface Event {
         e:String;
@@ -76,10 +79,6 @@ export const BringPokes = () => {
             })
         }) 
     }
-    
-    const ShowPokes = () => {
-        setIsInfoPokeOpen(true);
-    }
 
     if (isLoading) return (
         <BringPokesStyle>
@@ -96,8 +95,10 @@ export const BringPokes = () => {
     return (
         <PokemonContext.Provider 
         value={{
-            filtredPokemons,
+            setIsInfoPokeOpen,
             isinfoPokeOpen,
+            idItem,
+            setIdItem
         }}>
         <PokeInfo/>
         <BringPokesStyle>
@@ -110,11 +111,17 @@ export const BringPokes = () => {
                 />
             </form>
             <div className="pokemonContainer">
-                {filtredPokemons.map(item => (
-                    <div key={item.name} className="pokemon" onClick={ShowPokes}>
-                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${item.id}.gif`}/>
-                        <p>{item.name}</p>
-                    </div>))}
+                {filtredPokemons.map(item => {
+                    const getid = () => {
+                        setIsInfoPokeOpen(true);
+                        setIdItem(item.id)
+                    }
+                    return (
+                        <div key={item.name} className="pokemon" onClick={getid}>
+                            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${item.id}.gif`}/>
+                            <p>{item.name}</p>
+                        </div>)
+                })} 
             </div>
             <Pagination
                 nextPage={nextUrl ? nextPage : null}

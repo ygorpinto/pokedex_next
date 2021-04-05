@@ -5,7 +5,8 @@ declare module 'styled-components' {
         title : string;
     
         colors : {
-    
+            
+            glass:string;
             background:string;
             text:string;
     
