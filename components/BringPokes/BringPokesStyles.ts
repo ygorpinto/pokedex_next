@@ -81,6 +81,10 @@ export const BringPokesStyle = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color:${props=>props.theme.colors.text};
+    font-size: 1.4rem;
 }
 
 .loadingContainer img {
