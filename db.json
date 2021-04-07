@@ -3,5 +3,6 @@
     "title2":"Battle Simulator",
     "inputplaceholder":"Digite o nome do Pokemon",
     "nextpage":"Proximo",
-    "prevpage":"Anterior"
+    "prevpage":"Anterior",
+    "bbutton":"Battle Simulator"
 }

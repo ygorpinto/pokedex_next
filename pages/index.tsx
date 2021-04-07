@@ -7,7 +7,8 @@ import dark from '../styles/darkTheme'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { ThemeButton } from '../components/ThemeButton/ThemeButton'
-
+import Link from 'next/link'
+import BattleButton from '../components/BattleButton/BattleButton'
 
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
   const [theme, setTheme] = useState(light)
 
   const handleTheme = () => {
-    setTheme( theme.title === "light" ? dark : light )
+    setTheme(theme.title === "light" ? dark : light)
   }
 
   return (
@@ -24,10 +25,13 @@ export default function Home() {
         <title>{db.title}</title>
       </Head>
       <ThemeProvider theme={theme}>
-      <Container>
-        <ThemeButton func={handleTheme}/>
-      <BringPokes/>
-      </Container>
+        <Container>
+          <Link href="/battle" passHref>
+            <BattleButton/>
+          </Link>
+          <ThemeButton func={handleTheme} />
+          <BringPokes />
+        </Container>
       </ThemeProvider>
     </>
   )
