@@ -52,7 +52,6 @@ export const BringPokesStyle = styled.div`
     font-weight: 600;
     color:${props=>props.theme.colors.text};
     transition: opacity 0.3s;
-    text-transform: capitalize;
 }
 
 .pokemon:hover{

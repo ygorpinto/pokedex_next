@@ -15,7 +15,6 @@ left:30%;
 border-radius:2rem;
 font-family: 'Roboto', sans-serif;
 font-weight: 600;
-text-transform: capitalize;
 
 button {
     position:absolute;
