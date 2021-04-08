@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import {ContainerStyles} from '../Container/ContainerStyles'
+import {Link} from 'react-router-dom'
 
 
 interface ContainerProps {
@@ -11,7 +12,7 @@ export const Container = ({ children }: ContainerProps) => {
         <ContainerStyles>
         <div className="mainCointainer">
             <div className="imgContainer">
-                <a href="/"><img src="/pokedex.png" /></a>
+                <Link to="/"><img src="/pokedex.png" /></Link>
             </div>
             {children}
         </div>

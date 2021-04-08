@@ -7,7 +7,13 @@ import dark from '../styles/darkTheme'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { ThemeButton } from '../components/ThemeButton/ThemeButton'
-import Link from 'next/link'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import BattleSimulator from '../components/Battle/Battle'
 
 
 export default function Home() {
@@ -20,18 +26,23 @@ export default function Home() {
 
   return (
     <>
+    <Router>
       <Head>
         <title>{db.title}</title>
       </Head>
       <ThemeProvider theme={theme}>
         <Container>
-          <Link href="/battle">
-            <img className="battleButton" src="1732452.png"/>
-          </Link>
+            <Link to="/battle"><img className="battleButton" src="1732452.png"/></Link>
           <ThemeButton func={handleTheme} />
+          <Switch>
+            <Route path="/battle">
+              <BattleSimulator/>
+            </Route>
           <BringPokes />
+          </Switch>
         </Container>
       </ThemeProvider>
+      </Router>
     </>
   )
 }
