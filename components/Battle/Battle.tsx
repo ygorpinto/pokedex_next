@@ -53,8 +53,10 @@ const BattleSimulator = () => {
                 {pokemonOk ? (
                     <>
                     <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/platinum/back/${idPoke}.png`}/>
+                    <div className="pokeHeader">
                     <h5>{pokemon.name}</h5>
-                    <p>HP : {pokemon.stats[0].base_stat}</p>
+                    <strong>HP : {pokemon.stats[0].base_stat}</strong>
+                    </div>
                     <p>Attack : {pokemon.stats[1].base_stat}</p>
                     <p>Defense : {pokemon.stats[2].base_stat}</p>
                     <p>SP Attack : {pokemon.stats[3].base_stat}</p>
@@ -70,8 +72,10 @@ const BattleSimulator = () => {
                 {pokemon2OK ? (
                 <>
                  <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/heartgold-soulsilver/${idPoke2}.png`}/>
+                        <div className="pokeHeader">
                         <h5>{pokemon2.name}</h5>
-                        <p>HP : {pokemon2.stats[0].base_stat}</p>
+                        <strong>HP : {pokemon2.stats[0].base_stat}</strong>
+                        </div>
                         <p>Attack : {pokemon2.stats[1].base_stat}</p>
                         <p>Defense : {pokemon2.stats[2].base_stat}</p>
                         <p>SP Attack : {pokemon2.stats[3].base_stat}</p>
