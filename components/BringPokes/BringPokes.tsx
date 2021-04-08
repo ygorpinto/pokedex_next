@@ -119,7 +119,7 @@ export const BringPokes = () => {
                     return (
                         <div key={item.name} className="pokemon" onClick={getid}>
                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${item.id}.gif`}/>
-                            <p>{item.name}</p>
+                            <p>{item.id}. {item.name}</p>
                         </div>)
                 })} 
             </div>

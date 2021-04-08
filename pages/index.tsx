@@ -8,7 +8,6 @@ import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { ThemeButton } from '../components/ThemeButton/ThemeButton'
 import Link from 'next/link'
-import BattleButton from '../components/BattleButton/BattleButton'
 
 
 export default function Home() {
@@ -26,8 +25,8 @@ export default function Home() {
       </Head>
       <ThemeProvider theme={theme}>
         <Container>
-          <Link href="/battle" passHref>
-            <BattleButton/>
+          <Link href="/battle">
+            <img className="battleButton" src="1732452.png"/>
           </Link>
           <ThemeButton func={handleTheme} />
           <BringPokes />
