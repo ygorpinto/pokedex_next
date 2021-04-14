@@ -34,20 +34,26 @@ export const PokeInfo = () => {
         <>
             {isinfoPokeOpen && (
                 <PokeInfoStyles>
-                    <button
-                        onClick={close}
-                    >X</button>
-                    <header>
-                        <h2>{data.name}</h2>
-                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${idItem}.gif`} />
-                    </header>
-                    <div className="stats">
-                        <p>HP : {data.stats[0].base_stat}</p>
-                        <p>Attack : {data.stats[1].base_stat}</p>
-                        <p>Defense : {data.stats[2].base_stat}</p>
-                        <p>SP Attack : {data.stats[3].base_stat}</p>
-                        <p>SP Defense : {data.stats[4].base_stat}</p>
-                        <p>Speed : {data.stats[5].base_stat}</p>
+                    <div className="pokemonContainerInfo">
+                        <div className="buttonContainer">
+                            <button
+                                onClick={close}
+                            >X</button>
+                        </div>
+                        <div className="pokemon">
+                            <header>
+                                <h2>{data.name}</h2>
+                                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${idItem}.gif`} />
+                            </header>
+                            <div className="stats">
+                                <p>HP : {data.stats[0].base_stat}</p>
+                                <p>Attack : {data.stats[1].base_stat}</p>
+                                <p>Defense : {data.stats[2].base_stat}</p>
+                                <p>SP Attack : {data.stats[3].base_stat}</p>
+                                <p>SP Defense : {data.stats[4].base_stat}</p>
+                                <p>Speed : {data.stats[5].base_stat}</p>
+                            </div>
+                    </div>
                     </div>
                 </PokeInfoStyles>
             )}
